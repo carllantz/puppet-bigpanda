@@ -1,12 +1,12 @@
 ## BigPanda / Puppet Events Integration
 
-`NOTE` At this time, BigPanda can consume puppet events representing application deployments. We're working on support for infrastructure changes.
+`NOTE` At this time, BigPanda can consume Puppet events representing application deployments. We're working on support for infrastructure changes, which should be coming out soon.
 
 ### Integration Methods
 
-* If you have a home-grown puppet module for application deployments, you'll probably want to use the [bigpanda's ruby client library](https://github.com/bigpandaio/bigpanda-rb).
+* If you have a home-grown Puppet module for application deployments, you'll probably want to use [BigPanda's Ruby client library](https://github.com/bigpandaio/bigpanda-rb).
 
-* If you are using a third-party puppet module for deployments, we provide a puppet type you can use within your manifests to publish deployments to BigPanda:
+* If you are using a third-party Puppet module for deployments, we provide a Puppet type you can use within your manifests to publish deployments to BigPanda:
 ```
 bigpanda_deployment { '<application_name>':
       version       => '<app version (optional)>',
@@ -19,20 +19,20 @@ bigpanda_deployment { '<application_name>':
 ### Puppet-Type Installation Instructions 
 
 #### Step 1
-On your puppet master host, install the bigpanda gem:
+On your Puppet master host, install the BigPanda gem:
 ```
 gem install bigpanda
 ```
 
 #### Step 2
-Install the bigpanda puppet module.
+Install the BigPanda Pupet module.
 ```
 puppet module install bigpanda/bigpanda
 ```
 Or download it from the [module page on Puppet Forge](http://forge.puppetlabs.com/bigpanda/bigpanda).
 
 #### Step 3
-Use the type in you puppet manfests:
+Use the type in you Puppet manfests:
 ```
 bigpanda_deployment { '<application_name>':
       version       => '<app version (optional)>',
@@ -40,4 +40,4 @@ bigpanda_deployment { '<application_name>':
       access_token  => '<bigpanda-token>',
 }
 ```
-You might want to use [puppet's ordering operators](http://docs.puppetlabs.com/learning/ordering.html) to publish the deployments to BigPanda only after changes.
+You might want to use [puppet's ordering operators](http://docs.puppetlabs.com/learning/ordering.html) to guarantee that deployments are only published to BigPanda when changes occur.
