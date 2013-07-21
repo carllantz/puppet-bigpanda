@@ -1,0 +1,5 @@
+name    'bigpanda'
+version '0.0.1'
+license 'MIT'
+summary 'BigPanda / Puppet events integration'
+project_page 'https://github.com/bigpandaio/puppet-bigpanda'
