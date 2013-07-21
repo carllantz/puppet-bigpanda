@@ -27,9 +27,9 @@ gem install bigpanda
 #### Step 2
 Install the bigpanda puppet module.
 ```
-puppet module install bigpandaio/puppet-bigpanda
+puppet module install bigpanda/bigpanda
 ```
-Or download it from the [module page on Puppet Forge](http://forge.puppetlabs.com/).
+Or download it from the [module page on Puppet Forge](http://forge.puppetlabs.com/bigpanda/bigpanda).
 
 #### Step 3
 Use the type in you puppet manfests:
