@@ -23,7 +23,7 @@ Puppet::Type.type(:bigpanda_deployment).provide(:bigpanda_deployment) do
       host          = Facter.value(:fqdn)
 
       client = BigPanda::Client.new :access_token => access_token, :target_url => 'https://stg-api.bigpanda.io'
-      client.deployment_end :host => host, :version => version, :component => component, :status => status
+      client.deployment_end :hosts => host, :version => version, :component => component, :status => status
       
     rescue Exception => e
       raise Puppet::Error, "Push bigpanda deployment failed with #{e}"
